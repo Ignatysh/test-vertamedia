@@ -15,15 +15,35 @@
     src: url("./../fonts/museo900.eot?#iefix") format("embedded-opentype"), url("./../fonts/museo900.woff2") format("woff2"), url("./../fonts/museo900.woff") format("woff"), url("./../fonts/museo900.ttf") format("truetype");
 }
 
+.header{height:100px;margin: 0 0 -100px;padding: 0;position: relative;z-index: 1000;}
+.fixed{position: fixed;top:0;left: 0;background: rgba(244, 244, 245, 0.95);	width: 100%;}
+.header .head-line{height: 98px;border-bottom: 1px solid #f7901e;}
+.header .head-logo{padding: 0;}
+.header .head-text{color: #fff;font-family:Museo500;font-size: 18px;text-align: right;text-transform: uppercase;padding-top: 10px }
+.header .logo{background: url(./../img/logo.png) no-repeat 20% 0;height: 135px;display: block;}
+.header .menu-head{	border-bottom: 1px solid #f7901e;display: inline-block;}
+.header .menu-head .head-menu-item{	color: #fff;font-size: 14px;font-family: Museo500;padding: 10px 10px;height: 40px;display: inline-block;text-decoration: none;text-transform: uppercase;}
+.header .logo_small,.header .logo-fixed{display: none;background: url(./../img/logo-f.png);width: 109px;height: 69px;margin: 0 auto}
+.header .menu-head .head-menu-item:hover{text-decoration: underline;}
+.header .menu-head .item-sign{background: #017DC5;margin-right: -5px;color:#fff !important;}
+.header .menu-head .item-log{background: #FC8E1D;color:#fff !important;}
+.header .menu-nav{margin-top: 20px;display: inline-block;}
+.header .menu-nav .menu-nav-item{color: #fff;font-family: Museo500;font-size: 18px;font-weight: bold;text-transform: uppercase;text-decoration: none;margin: 0px 6px;display: inline-block;height: 37px;}
+.header .menu-nav .menu-nav-item:hover{border-bottom: 4px solid #f7901e;color:#23527c;}
+.header .menu-small{width: 150px;display: none;margin-top: 10px;float: right;}
+.header .menu-head-small{width: 150px;display: none;margin-top: 5px;float: right;}
+.header .menu-small .menu-select,.header .menu-head-small .menu-select{background: #1C232D;color: #fff;border: 1px solid #f16e1e;border-radius: 4px;box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;display: block;font-size: 14px;height: 34px;line-height: 1.42857;padding: 6px 12px;width: 100%;font-family: Museo500;font-size: 14px;font-weight: bold;text-transform: uppercase;}
+.header .menu-small .menu-select option,.header .menu-head-small .menu-select option{padding: 10px 5px;}
+
 #sectionTop{background: url(../img/bg-top.jpg);background-size: 100% 600px;}
-#sectionTop .block-Top{	margin: 200px 0px;	}
+#sectionTop .block-Top{	margin: 150px 0px;	}
 #sectionTop .block-Top .top-title{color:#F7F7F7;font-family: Museo900;font-size:36px;text-transform: uppercase;margin-bottom: 20px;	}
 #sectionTop .block-Top .text-Top{color:#F7F7F7;	font-family: Museo500;font-size:20px;margin-bottom: 30px;}	
 #sectionTop .block-Top .button-Top:hover{background: #C86E1E;cursor: pointer;}	
 #sectionTop .block-Top .button-Top{background: #F16E1E;display: inline-block;margin: 0 auto;}	
 #sectionTop .block-Top .button-Top a{color:#fff;font-size:24px;font-weight: bold;text-transform: uppercase;text-decoration: none;display: block;padding: 5px 80px;}
 
-#sectionBlock{height:300px;background: #fff;padding-top: 100px; } 
+#sectionBlock{background: #fff;padding: 100px 0px; } 
 #sectionBlock .blocktext{color:#858585;font-size:16px;font-family: Museo500;}
 
 #sectionSlide{background: url(../img/bg-slide.jpg) no-repeat scroll 0 0 / 100% 700px; } 
@@ -69,13 +89,20 @@
 .footer .but-contact-us{border: 2px solid #007ec5;color: #fff;cursor: pointer;display: inline-block;font-family: Museo900;font-size: 24px;padding: 5px 40px;text-align: center;text-decoration: none;text-transform: uppercase;margin-left: 25%;}
 .footer .but-contact-us:hover{text-decoration: underline;}
 
-@media (max-width:1200px){.footer .but-contact-us{margin-left: 10%;}}
+@media (max-width:1200px){.footer .but-contact-us{margin-left: 10%;} #sectionTop .block-Top{	margin: 120px 0px;	}}
+@media (max-width:1125px){
+	.header .menu-nav .menu-nav-item{font-size: 16px;margin: 0px 3px;}
+	.header .menu-head .head-menu-item{font-size: 12px;}
+	.header .head-text{font-size: 14px;}			
+	 }
 @media (max-width:768px){
+	.header .logo_small{display: block;}	
 	#sectionTop,#sectionNet{background-size:auto;}
+	#sectionTop .block-Top{	margin: 100px 0px;	}
 	#sectionTop .block-Top .top-title{font-size: 26px;}	
 	#sectionTop .block-Top .text-Top{font-size: 18px;}
 	#sectionTop .block-Top .button-Top a {font-size: 18px;}
-	#sectionBlock{padding-top: 70px;}		
+	#sectionBlock{padding: 70px 0px;}			
 	#myCarousel{padding: 50px 0px;}		 
 	 .carousel-indicators{top:80%;}
 	#sectionSlide .item h2{font-size: 22px; margin: 20% 0 10% 0;}
@@ -83,23 +110,36 @@
 	.footer .but-contact-us{margin-left: 0%;padding: 5px 20px;}
 	.footer .verified-image{margin-left: 0px;}
 	.footer .row{text-align: center;}
+	#sectionNet .block-Net{	margin:100px 0px;}
 	#sectionNet .block-Net .text-Net{font-size: 26px;}
 	#sectionNet .block-Net .button-Net a{font-size: 20px;}
 }
-@media (max-width:580px){
+@media (max-width:600px){
+	.header .head-line{height: 88px;}
+	.header .menu-nav .menu-nav-item{font-size: 12px;margin:0px 2px;height: 33px;}
+	.header .menu-head .head-menu-item{font-size: 10px;padding: 8px 4px;height: 30px;}
 	.col-soc-12{clear: both; width: 100%;}
 	.footer .copyright{width: 100%;margin-top: 20px;}	
 }
-@media (max-width:500px){
-	#sectionBlock{padding-top: 30px;}
+@media (max-width:500px){	
+	.header .menu-nav .menu-nav-item{font-size: 12px;margin:0px 1px;}
+	.header .menu-nav {display: none;}
+	.header .menu-small{display: block;}
+	
+	#sectionTop .block-Top{	margin: 50px 0px;	}
+	#sectionBlock{padding: 30px 0px;}
 	 .carousel-indicators{top:90%;}
 	#sectionHave .title_cont:before,#sectionHave .title_cont:after{display: none;}
 	#sectionHave .title_cont{height: auto;}		
 	.footer .tmp-clear{	clear: both;}	
 	#sectionSlide .item h2{font-size: 20px; margin: 5% 0 10% 0;}
 	 #sectionHave .items_H{	margin: 20px 0px;}
+	 #sectionNet .block-Net{	margin:70px 0px;}
 }
 @media (max-width:400px){
+	.header .menu-small{width: 130px;}
+	.header .menu-head-small{width: 130px;display: block;}
+	.header .menu-head{display: none;}
 		#sectionSlide .carousel-indicators{top:90%;}	
 		.col-xxs-12{clear: both; width: 100%;}	
 		.item_H img{margin-bottom: 10px;}

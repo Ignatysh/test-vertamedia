@@ -20,26 +20,65 @@
     <![endif]-->
   </head>
   <body>
-<div class="header"></div>
+<div class="header default">
+  <div class="col-lg-1 col-md-1 hidden-sm col-xs-2 head-line"><a href="#" class="logo_small"></a></div>
+  <div class="col-lg-2 col-md-2 col-sm-3 hidden-xs head-logo text-center"><a href="#" class="logo"></a><a href="#" class="logo-fixed"></a></div>
+  <div class="col-lg-3 col-md-3 hidden-sm hidden-xs head-line"><div class="head-text">TOLL FREE: 1.855.211.2021</div></div>
+  <div class="col-lg-6 col-md-6 col-sm-9 col-xs-10 head-line text-right">
+    <div class="menu-head">
+      <a href="#" class="head-menu-item">Resources</a>
+      <a href="#" class="head-menu-item">Events</a>
+      <a href="#" class="head-menu-item">Career</a>
+      <a href="#" class="head-menu-item item-sign">Signup</a>
+      <a href="#" class="head-menu-item item-log">Login</a>
+      <a href="#" class="head-menu-item ">En</a>
+    </div>  
+    <div class="menu-head-small">
+          <select class="menu-select">
+            <option value="#">Resources</option>
+            <option value="#">Events</option>
+            <option value="#">Career</option>
+            <option value="#">Signup</option>
+            <option value="#">Login</option>
+            <option value="#">En</option>
+          </select>
+    </div>  
+    <div class="clearfix"></div>
+    <div class="menu-small">
+          <select class="menu-select">
+            <option value="#">About</option>
+            <option value="#">Advertise</option>
+            <option value="#">Monetize</option>
+            <option value="#">Blog</option>
+            <option value="#">Contact us</option>
+          </select>
+    </div>
+    <div class="menu-nav">
+      <a href="#" class="menu-nav-item">About</a>
+      <a href="#" class="menu-nav-item">Advertise</a>
+      <a href="#" class="menu-nav-item">Monetize</a>
+      <a href="#" class="menu-nav-item">Blog</a>
+      <a href="#" class="menu-nav-item">Contact us</a>
+    </div>
+  </div>
+</div>
 <div class="page-wrapper">
     <div id="sectionTop">
         <div class="container">
         <div class="row text-center">
-          <div class="col-lg-2 col-mb-2 col-sm-1"></div>
-          <div class="col-lg-8 col-mb-8 col-sm-10 col-xs-12">
+          <div class="col-lg-offset-2 col-mb-offset-2 col-sm-offset-1"></div>
+          <div class="col-lg-8 col-mb-8 col-sm-11 col-xs-12">
             <div class="block-Top">
               <h2 class="top-title">Vertamedia.affiliate</h2>
               <div class="text-Top">Generate extra revenue to your budget by referring</br> new clients to our company</div>
               <div class="button-Top"><a href="#">Sign up</a></div>                
             </div>            
-          </div>
-          <div class="col-lg-2 col-mb-2 col-sm-1"></div>
+          </div>          
         </div>
       </div>      
     </div>
     <div id="sectionBlock">
-      <div class="container">
-        
+      <div class="container">        
         <div class="row">
           <div class="col-lg-2"></div>       
           <div class="col-xs-12 col-lg-8">
@@ -211,9 +250,32 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
      <script>
+     $(".header .menu-small .menu-select,.header .menu-head-small .menu-select").change(function() {
+          window.location = $(this).find("option:selected").val();
+      });
     $('.carousel').carousel({
         interval: 3000 //changes the speed
     })
+ 
+     var $topmenu = $(".header");            
+        $(window).scroll(function(){
+            if ( $(this).scrollTop() > 150 && $topmenu.hasClass("default")){  
+                $topmenu.removeClass("default").addClass("fixed");                                       
+                $('.fixed a,.head-text').css("color","#47464b");
+                $('.logo').hide();
+                $('.logo-fixed').css("display","block");
+                $('.header .head-line').css("border-bottom","none");
+             
+            } else if($(this).scrollTop() < 50 && $topmenu.hasClass("fixed")) { 
+                $topmenu.removeClass("fixed").addClass("default");  
+                $('.header a,.head-text').css("color","#fff");                       
+                $('.logo').show();
+                $('.logo-fixed').css("display","none");
+                $('.header .head-line').css("border-bottom","1px solid #f7901e");
+            }
+        });//scroll
+
+
     </script>
   </body>
 </html>

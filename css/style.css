@@ -16,7 +16,7 @@
 }
 
 .header{height:100px;margin: 0 0 -100px;padding: 0;position: relative;z-index: 1000;}
-.fixed{position: fixed;top:0;left: 0;background: rgba(244, 244, 245, 0.95);	width: 100%;}
+.fixed{position: fixed;top:0;left: 0;background: #F4F4F5;opacity:0.95;width: 100%;}
 .header .head-line{height: 98px;border-bottom: 1px solid #f7901e;}
 .header .head-logo{padding: 0;}
 .header .head-text{color: #fff;font-family:Museo500;font-size: 18px;text-align: right;text-transform: uppercase;padding-top: 10px }
@@ -46,7 +46,7 @@
 #sectionBlock{background: #fff;padding: 100px 0px; } 
 #sectionBlock .blocktext{color:#858585;font-size:16px;font-family: Museo500;}
 
-#sectionSlide{background: url(../img/bg-slide.jpg) no-repeat scroll 0 0 / 100% 700px; } 
+#sectionSlide{background: url(../img/bg-slide.jpg);background-size: 100% 600px; } 
 #sectionSlide #myCarousel{padding: 100px 0px;}
 #sectionSlide .item h2{color:#D07433; margin: 20% 0 10% 0;}
 #sectionSlide .item p{color:#858585;font-family:Museo300;font-size: 16px;}
@@ -62,7 +62,7 @@
 #sectionHave .item_H .text_item{font-family: Museo500;font-size: 16px;width: 124px;text-align: center;margin: 0 auto;}
 #sectionHave .item_H img{margin-bottom: 30px; }
 
-#sectionNet{background: url(../img/bg-net.jpg) no-repeat scroll 0 0 / 100% 600px;}
+#sectionNet{background: url(../img/bg-net.jpg);background-size: 100% 600px;}
 #sectionNet .block-Net{	margin:200px 0px;}
 #sectionNet .block-Net .text-Net{color:#F7F7F7;font-family: Museo700;font-size:30px;letter-spacing: 2px;margin-bottom: 50px;}	
 #sectionNet .block-Net .button-Net:hover{background: #C86E1E;cursor: pointer;}	
@@ -124,8 +124,7 @@
 @media (max-width:500px){	
 	.header .menu-nav .menu-nav-item{font-size: 12px;margin:0px 1px;}
 	.header .menu-nav {display: none;}
-	.header .menu-small{display: block;}
-	
+	.header .menu-small{width: 130px;display: block;}
 	#sectionTop .block-Top{	margin: 50px 0px;	}
 	#sectionBlock{padding: 30px 0px;}
 	 .carousel-indicators{top:90%;}
@@ -137,9 +136,11 @@
 	 #sectionNet .block-Net{	margin:70px 0px;}
 }
 @media (max-width:400px){
-	.header .menu-small{width: 130px;}
-	.header .menu-head-small{width: 130px;display: block;}
+	.header .menu-small{width: 100px;}
+	.header .menu-head-small{width: 100px;display: block;}
 	.header .menu-head{display: none;}
+	.header .menu-small .menu-select, .header .menu-head-small .menu-select{font-size: 10px;}
+	#sectionTop .block-Top .button-Top a{padding: 5px 40px;}
 		#sectionSlide .carousel-indicators{top:90%;}	
 		.col-xxs-12{clear: both; width: 100%;}	
 		.item_H img{margin-bottom: 10px;}
